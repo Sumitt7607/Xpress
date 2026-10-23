@@ -61,13 +61,14 @@ export function ServiceCard({ service }: { service: Service }) {
             <Link
               to="/services/$slug"
               params={{ slug: service.slug }}
-              className="flex items-center justify-center gap-1 rounded-full border border-border bg-accent/60 px-3 py-2 text-xs font-extrabold text-ink transition-colors hover:bg-accent hover:text-pink-deep"
+              className="flex items-center justify-center gap-1 rounded-full border border-border bg-accent/60 px-2 sm:px-3 py-2 text-[11px] sm:text-xs font-extrabold text-ink transition-colors hover:bg-accent hover:text-pink-deep"
             >
-              <Info className="h-3.5 w-3.5 text-pink-deep" /> View Details
+              <Info className="h-3.5 w-3.5 shrink-0 text-pink-deep" />
+              <span>Details</span>
             </Link>
             <Link
               to="/contact"
-              className="flex items-center justify-center rounded-full bg-lime px-3 py-2 text-center text-xs font-extrabold tracking-wide text-primary-foreground uppercase transition-colors hover:bg-lime-dark"
+              className="flex items-center justify-center rounded-full bg-lime px-2 sm:px-3 py-2 text-center text-[11px] sm:text-xs font-extrabold tracking-wide text-primary-foreground uppercase transition-colors hover:bg-lime-dark"
             >
               Get Quote
             </Link>
@@ -78,15 +79,17 @@ export function ServiceCard({ service }: { service: Service }) {
               href={`https://wa.me/919740819908?text=${encodeURIComponent(`Hi Xpressmovers, I would like to inquire about ${service.name}.`)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 rounded-full bg-lime-dark px-3 py-2 text-xs font-extrabold text-primary-foreground transition-opacity hover:opacity-90"
+              className="flex items-center justify-center gap-1.5 rounded-full bg-lime-dark px-2 sm:px-3 py-2 text-[11px] sm:text-xs font-extrabold text-primary-foreground transition-opacity hover:opacity-90"
             >
-              <MessageCircle className="h-3.5 w-3.5" /> WhatsApp
+              <MessageCircle className="h-3.5 w-3.5 shrink-0" />
+              <span>WhatsApp</span>
             </a>
             <a
               href="tel:+919740819908"
-              className="flex items-center justify-center gap-1.5 rounded-full bg-pink-deep px-3 py-2 text-xs font-extrabold text-background transition-opacity hover:opacity-90"
+              className="flex items-center justify-center gap-1.5 rounded-full bg-pink-deep px-2 sm:px-3 py-2 text-[11px] sm:text-xs font-extrabold text-background transition-opacity hover:opacity-90"
             >
-              <Phone className="h-3.5 w-3.5" /> Call Now
+              <Phone className="h-3.5 w-3.5 shrink-0" />
+              <span>Call Now</span>
             </a>
           </div>
         </div>

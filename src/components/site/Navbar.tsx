@@ -22,7 +22,7 @@ export function Navbar() {
           <img
             src={logoImg}
             alt="Xpressmovers.in"
-            className="h-10 sm:h-12 w-auto object-contain rounded shadow-xs"
+            className="h-9 sm:h-11 md:h-12 w-auto max-w-[160px] sm:max-w-none object-contain rounded shadow-xs"
           />
         </Link>
 
@@ -49,7 +49,7 @@ export function Navbar() {
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="grid h-10 w-10 place-items-center rounded-md border border-border lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-card lg:hidden text-ink transition-colors active:scale-95"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -57,23 +57,34 @@ export function Navbar() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 border-t border-border bg-background px-4 py-3 lg:hidden">
+        <nav className="flex flex-col gap-1 border-t border-border bg-background px-4 py-4 lg:hidden shadow-xl animate-in slide-in-from-top-2 duration-200">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               onClick={() => setOpen(false)}
-              className="rounded-md px-2 py-2 text-sm font-bold text-ink hover:bg-accent"
+              className="rounded-xl px-3 py-2.5 text-sm font-bold text-ink hover:bg-accent active:bg-accent"
+              activeProps={{ className: "bg-pink-soft text-pink-deep font-extrabold" }}
             >
               {l.label}
             </Link>
           ))}
-          <a
-            href="tel:+919740819908"
-            className="mt-2 flex items-center justify-center gap-2 rounded-full bg-lime px-5 py-2.5 text-sm font-extrabold text-primary-foreground"
-          >
-            <Phone className="h-4 w-4" /> +91 9740819908
-          </a>
+          <div className="mt-3 grid grid-cols-2 gap-2 border-t border-border/80 pt-3">
+            <a
+              href="tel:+919740819908"
+              className="flex items-center justify-center gap-1.5 rounded-full bg-lime px-4 py-2.5 text-xs font-extrabold text-primary-foreground shadow-xs"
+            >
+              <Phone className="h-4 w-4" /> Call 24/7
+            </a>
+            <a
+              href="https://wa.me/919740819908?text=Hi%20Xpressmovers%2C%20I%20would%20like%20to%20get%20a%20moving%20quote."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 rounded-full bg-lime-dark px-4 py-2.5 text-xs font-extrabold text-primary-foreground shadow-xs"
+            >
+              WhatsApp
+            </a>
+          </div>
         </nav>
       )}
 

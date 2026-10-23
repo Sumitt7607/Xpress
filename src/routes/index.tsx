@@ -166,7 +166,7 @@ function Index() {
                 src={img}
                 alt="Happy customers moving with Xpressmovers"
                 loading="lazy"
-                className="h-full min-h-[130px] w-full object-cover"
+                className="h-28 sm:h-36 md:h-full min-h-[110px] w-full object-cover"
               />
             ))}
           </div>
@@ -175,7 +175,7 @@ function Index() {
 
       {/* Trust strip */}
       <section className="bg-lime">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-6 text-center md:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-5 sm:py-6 text-center md:grid-cols-4">
           {[
             ["15,000+", "Happy Moves"],
             ["25+", "Cities Covered"],
@@ -186,7 +186,7 @@ function Index() {
               <p className="font-display text-2xl font-extrabold text-primary-foreground md:text-3xl">
                 {n}
               </p>
-              <p className="text-xs font-bold tracking-wide text-primary-foreground/80 uppercase">
+              <p className="text-[11px] sm:text-xs font-bold tracking-wide text-primary-foreground/80 uppercase">
                 {l}
               </p>
             </div>
@@ -195,18 +195,18 @@ function Index() {
       </section>
 
       {/* 24x7 Call Banner */}
-      <section className="mx-auto max-w-5xl px-4 py-8 md:py-12">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#9b111e] via-[#b81d24] to-[#7d0a14] px-6 py-8 shadow-2xl transition-transform hover:scale-[1.01] md:px-12 md:py-10">
+      <section className="mx-auto max-w-5xl px-4 py-6 sm:py-8 md:py-12">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#9b111e] via-[#b81d24] to-[#7d0a14] px-4 py-6 sm:px-8 sm:py-8 md:px-12 md:py-10 shadow-2xl transition-transform hover:scale-[1.01]">
           <div className="flex flex-col items-center text-center">
             {/* Top row: CALL 24X7 pill badge + Large Phone Number */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-4 py-1.5 text-xs font-extrabold tracking-wider text-white uppercase backdrop-blur-xs">
+            <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-6">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/10 px-3.5 py-1 text-[11px] sm:text-xs font-extrabold tracking-wider text-white uppercase backdrop-blur-xs">
                 <Phone className="h-3.5 w-3.5 fill-white text-white" />
                 CALL 24X7
               </span>
               <a
                 href="tel:+919740819908"
-                className="font-display text-4xl font-black tracking-tight text-white transition-all hover:text-white/90 active:scale-95 sm:text-5xl md:text-6xl"
+                className="font-display text-3xl font-black tracking-tight text-white transition-all hover:text-white/90 active:scale-95 sm:text-5xl md:text-6xl"
               >
                 9740819908
               </a>
@@ -313,12 +313,14 @@ function Index() {
                 Select Your Move Size:
               </label>
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-5">
-                {calculatorOptions.map((opt) => (
+                {calculatorOptions.map((opt, i) => (
                   <button
                     key={opt.id}
                     type="button"
                     onClick={() => setSelectedSize(opt.id)}
-                    className={`rounded-2xl border p-3 text-center transition-all ${
+                    className={`rounded-2xl border p-2.5 sm:p-3 text-center transition-all ${
+                      i === calculatorOptions.length - 1 ? "col-span-2 sm:col-span-1" : ""
+                    } ${
                       selectedSize === opt.id
                         ? "border-pink-deep bg-pink-soft text-pink-deep shadow-md font-extrabold"
                         : "border-border bg-background text-ink/80 hover:bg-accent"
@@ -331,32 +333,32 @@ function Index() {
             </div>
 
             {/* Estimate Result Card */}
-            <div className="mt-8 rounded-2xl border border-lime bg-lime-soft/20 p-6">
+            <div className="mt-8 rounded-2xl border border-lime bg-lime-soft/20 p-4 sm:p-6">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                <div className="text-center sm:text-left">
+                  <span className="text-[11px] sm:text-xs font-bold text-muted-foreground uppercase tracking-wider">
                     Estimated Cost Range ({moveType === "local" ? "Local Move" : "Interstate Transit"}):
                   </span>
                   <div className="font-display text-3xl sm:text-4xl font-black text-ink mt-1">
                     {priceDisplay}
                   </div>
-                  <p className="text-xs text-muted-foreground mt-1">
+                  <p className="text-[11px] sm:text-xs text-muted-foreground mt-1">
                     *Actual cost depends on exact inventory volume, floor level, and custom crating needs.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 w-full md:w-auto">
                   <a
                     href={`https://wa.me/919740819908?text=${encodeURIComponent(`Hi Xpressmovers, I checked your estimate for ${currentOption.label} (${moveType === "local" ? "Local" : "Interstate"}: approx ${priceDisplay}). Please share exact booking details.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-lime-dark px-6 py-3 font-display text-xs font-extrabold text-primary-foreground shadow-md transition-opacity hover:opacity-90"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-lime-dark px-5 sm:px-6 py-3 font-display text-xs font-extrabold text-primary-foreground shadow-md transition-opacity hover:opacity-90"
                   >
                     <MessageCircle className="h-4 w-4" /> Get Quote on WhatsApp
                   </a>
                   <a
                     href="tel:+919740819908"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-6 py-3 font-display text-xs font-extrabold text-background transition-colors hover:bg-neutral-800"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-ink px-5 sm:px-6 py-3 font-display text-xs font-extrabold text-background transition-colors hover:bg-neutral-800"
                   >
                     <Phone className="h-4 w-4" /> Call 9740819908
                   </a>

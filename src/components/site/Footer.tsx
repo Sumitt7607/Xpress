@@ -17,7 +17,7 @@ import { BottomBar } from "./BottomBar";
 export function Footer() {
   return (
     <>
-      <footer className="mt-20 border-t border-border bg-ink text-background pb-20 sm:pb-16">
+      <footer className="mt-20 border-t border-border bg-ink text-background pb-28 sm:pb-20">
         {/* Top Trust Bar */}
         <div className="border-b border-background/10 bg-background/5">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-6 text-xs sm:grid-cols-4">

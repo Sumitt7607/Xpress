@@ -102,18 +102,18 @@ function ServiceDetailPage() {
               </h1>
             </div>
 
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2.5 w-full sm:w-auto">
               <a
                 href={`https://wa.me/919740819908?text=${encodeURIComponent(`Hi Xpressmovers, I would like to inquire about your ${service.name} service.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-lime-dark px-5 py-2.5 font-display text-xs font-extrabold text-primary-foreground shadow-sm transition-opacity hover:opacity-90"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-full bg-lime-dark px-4 sm:px-5 py-2.5 font-display text-xs font-extrabold text-primary-foreground shadow-sm transition-opacity hover:opacity-90"
               >
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
               </a>
               <a
                 href="tel:+919740819908"
-                className="inline-flex items-center gap-2 rounded-full bg-pink-deep px-5 py-2.5 font-display text-xs font-extrabold text-background shadow-sm transition-opacity hover:opacity-90"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 rounded-full bg-pink-deep px-4 sm:px-5 py-2.5 font-display text-xs font-extrabold text-background shadow-sm transition-opacity hover:opacity-90"
               >
                 <Phone className="h-4 w-4" /> Call 9740819908
               </a>
